@@ -1,0 +1,386 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:500)
+
+@import 'variables'
+
+*
+  box-sizing: border-box
+  &:before, &:after
+    box-sizing: border-box
+
+body
+  background: #C5DDEB
+  font-family: $font-stack
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+
+.users-list
+  float: left
+  .search
+    padding: 20px
+  input
+    border-radius: 3px
+    border: none
+    padding: 14px
+    color: white
+    background: $grey
+    width: 90%
+    font-size: 14px
+  .fa-search
+    position: relative
+    left: -25px
+  ul
+    padding: 20px
+    max-height: 770px
+    li
+      padding-bottom: 20px
+  img
+    float: left
+  .about
+    float: left
+    margin-top: 8px
+    padding-left: 8px
+  .status
+    color: $grey
+
+.status .online
+  color: $green
+  font-size: 12px
+
+.chat, .room
+  float: left
+  background: $white
+  color: $dark-blue
+
+.chat .chat-header, .room .room-header
+  padding: 10px 20px
+  border-bottom: 2px solid white
+
+.chat .chat-header img, .room .room-header img
+  float: left
+
+.chat .chat-header .chat-about, .room .room-header .room-about
+  float: left
+  padding-left: 10px
+  margin-top: 6px
+
+.chat .chat-header .chat-room, .room .room-header .room-title
+  font-weight: bold
+  font-size: 16px
+
+.chat .chat-header .chat-num-users, .room .room-header .room-num-rooms
+  color: $grey
+
+.fa-users, .fa-th-list
+  float: right
+  color: $grey
+  font-size: 20px
+  margin-top: 12px
+
+.chat .chat-history, .room .room-list
+  padding: 10px 30px 20px
+  border-bottom: 2px solid white
+  overflow-y: scroll
+
+.chat
+  .chat-history
+    .message-data
+      margin-bottom: 12px
+    .message-data-time
+      color: #a8aab1
+      padding-left: 6px
+      font-size: 80%
+    .message
+      color: white
+      padding: 6px 15px
+      line-height: 26px
+      font-size: 14px
+      margin-bottom: 20px
+      position: relative
+      max-width: 100%;
+      word-wrap: break-word;
+      &:after
+        bottom: 100%
+        left: 7%
+        border: solid transparent
+        content: " "
+        height: 0
+        width: 0
+        position: absolute
+        pointer-events: none
+        border-bottom-color: $coral
+        border-width: 10px
+        margin-left: -10px
+    .my-message
+      background: $green
+  .chat-message
+    padding: 20px
+
+.room .room-create
+  padding: 20px
+
+.chat .chat-message textarea, .room .room-create input
+  width: 100%
+  border: none
+  padding: 10px 20px
+  font: 14px/22px "Roboto", Arial, sans-serif
+  margin-bottom: 10px
+  resize: none
+
+.online, .offline, .me
+  margin-right: 3px
+  font-size: 10px
+
+.online
+  color: $green
+
+.offline
+  color: $coral
+
+.me
+  color: $blue
+
+.align-left
+  text-align: left
+
+.align-right
+  text-align: right
+
+.float-right
+  float: right
+
+.clearfix:after
+  visibility: hidden
+  display: block
+  font-size: 0
+  content: " "
+  clear: both
+  height: 0
+
+/*  Login Page
+
+.login-page
+  padding: 8% 0 0
+  margin: 0 auto
+
+.form
+  position: relative
+  z-index: 1
+  background: #FFFFFF
+  margin: 0 auto 100px
+  padding: 45px
+  text-align: center
+  .form-login
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24)
+    background-color: #F2F5F8
+    padding: 30px;
+    max-width: 400px;
+    margin: 0px auto;
+    position: relative;
+    top: 40px;
+  input
+    background: #f2f2f2
+    width: 100%
+    border: 0
+    margin: 0 0 15px
+    padding: 15px
+    box-sizing: border-box
+    font-size: 14px
+    background-color: white
+  button
+    text-transform: uppercase
+    outline: 0
+    background: $coral
+    width: 100%
+    border: 0
+    padding: 15px
+    color: #FFFFFF
+    font-size: 14px
+    -webkit-transition: all 0.3 ease
+    transition: all 0.3 ease
+    cursor: pointer
+    &:hover, &:active, &:focus
+      background: #87c6b7
+  .message
+    margin: 15px 0 0
+    color: #b3b3b3
+    font-size: 16px
+
+.room-create .message
+  margin: 15px 0 0
+  color: #b3b3b3
+  font-size: 12px
+
+.form
+  .message a
+    color: $green
+    text-decoration: none
+  .register-form
+    display: none
+
+
+ul
+  list-style: none
+
+.chat-history ul
+  margin: 0
+  padding: 0
+  border: 0
+  font-size: 100%
+  font: inherit
+  vertical-align: baseline
+
+.room .room-list
+  .room-item
+    color: white
+    padding: 30px 14px
+    line-height: 26px
+    font-size: 16px
+    border-radius: 7px
+    width: 100%
+    position: relative
+    cursor: pointer
+    text-align: center
+  a
+    text-decoration: none
+
+.users-list
+  .name
+    color: black
+  ul
+    overflow-y: scroll
+
+.loginBtn
+  width: 80%
+
+.form-line
+  position: absolute
+  left: 0px
+  margin-top: 2px
+  border-bottom: 2px solid white
+
+.social-buttons div span
+  font-weight: bold
+
+.chat-message button, .room-create button
+  float: right
+  text-transform: uppercase
+  outline: 0
+  background: $coral
+  border: 0
+  padding: 15px
+  color: #FFFFFF
+  font-size: 14px
+  -webkit-transition: all 0.3 ease
+  transition: all 0.3 ease
+  cursor: pointer
+
+.controls
+  a
+    float: right
+    text-transform: uppercase
+    outline: 0
+    background: $green
+    border: 0
+    padding: 15px
+    color: #FFFFFF
+    font-size: 14px
+    -webkit-transition: all 0.3 ease
+    transition: all 0.3 ease
+    cursor: pointer
+    margin: 0
+  float: left
+  margin: 0
+  text-align: center
+
+.users-list li img, .chat-header img
+  width: 60px
+  height: 60px
+  border: 3px solid #676c75
+  border-radius: 50%
+  -webkit-border-radius: 50%
+  -moz-border-radius: 50%
+
+.controls a
+  text-decoration: none
+
+.message
+  &.error
+    color: red
+  &.success
+    color: $green
+
+.container
+  overflow: hidden
+  z-index: 5
+
+.chat, .users-list
+  width: 100%
+
+.not-found-error
+  padding: 5%
+  background-color: white
+
+.chat .chat-history .my-message
+  text-align: initial
+
+.social-buttons
+  position: relative
+  top: 20px
+  font-size: 16px
+
+.social-buttons .fa
+  font-size: 24px
+  margin: 0px 3px
+
+.social-buttons a:hover
+  text-decoration: none
+
+.form-login button[type=submit]
+  font-weight: 600
+
+.navigation
+  position: fixed
+  bottom: 0
+  background: rgba(20, 20, 20, 0.9)
+  opacity: 9999
+  display: block
+  width: 100% !important
+
+.room
+  float: none
+  margin-top: 30px
+
+.controls a
+  background: none
+  &:hover
+    color: #dedede
+    text-decoration: none
+
+.room-list ul
+  padding-left: 0
+  a
+    width: 31.33%
+    display: inline-block
+    float: left
+    margin: 5px 1%
+
+.room-list a:nth-of-type(odd) li
+    background: $green
+
+.room-list a:nth-of-type(even) li, .chat .chat-history .my-message
+    background: $coral
+
+span.message-data-time
+  max-width: 150px
+  overflow: hidden
+  display: inline-block
+  height: 12px
+
+.chat-users
+  background: none
+
+.chat-message textarea
+  border: solid 1px #ccc !important
+
+.chat
+  margin-bottom: 80px

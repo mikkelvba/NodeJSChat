@@ -1,0 +1,28 @@
+{
+  "name": "meanstackchat",
+  "description": "Mean Stack School Project - Using Express, Mongoose, and Redis",
+  "main": "server.js",
+  "authors": [
+    "Mike Jakobsen"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "chat",
+    "school",
+    "mongoose",
+    "redis"
+  ],
+  "homepage": "http://www.mikejakobsen.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "font-awesome": "^4.6.3"
+  }
+}

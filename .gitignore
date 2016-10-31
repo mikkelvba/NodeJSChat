@@ -1,0 +1,22 @@
+# Node Dependencies
+node_modules
+
+# IntelliJ Shit
+.idea/
+
+# Bower
+bower_modules
+
+# Logs
+debug.log
+npm-debug.log
+
+# Codekit
+
+config.codekit
+src/styles/.sass-cache/
+
+
+# Config
+
+app/config/config.json

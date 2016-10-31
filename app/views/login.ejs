@@ -1,0 +1,60 @@
+<% include head.ejs %>
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="form col-xs-12 col-sm-6 col-sm-offset-3 login-outer-box">
+			<h1>iChat</h1>
+			<div class="social-buttons">
+				<div><span>Login</span> via</div>
+				<a href="/auth/facebook">
+					<i class="fa fa-facebook-square" aria-hidden="true"></i>
+				</a>
+
+				<a href="/auth/twitter">
+					<i class="fa fa-twitter-square" aria-hidden="true"></i>
+				</a>
+			</div>
+
+			<div class="form-login">
+				<form action="/register" class="register-form" method="post" >
+					<input type="text" name="username" placeholder="Username"/>
+					<input type="password" name="password" placeholder="Password"/>
+					<button type="submit">create</button>
+					<p class="message">Already registered? <a href="#">Sign In</a></p>
+					<% if (errors != null && showRegisterForm != null && showRegisterForm === true) { %>
+						<% errors.forEach(function(err){ %>
+							<p class="message error"><%= err %></p>
+						<% }); %>
+					<% } %>
+				</form>
+				<form action="/login" class="login-form" method="post">
+					<input type="text" name="username" placeholder="Username"/>
+					<input type="password" name="password" placeholder="Password"/>
+					<button type="submit">login</button>
+					<p class="message">Not registered? <a href="#">Create a user</a></p>
+					<% if (errors != null && showRegisterForm == null) { %>
+						<% errors.forEach(function(err){ %>
+							<p class="message error"><%= err %></p>
+						<% }); %>
+					<% } if (success != null && showRegisterForm == null) { %>
+						<p class="message success"><%= success %></p>
+					<% } %>
+				</form>
+			</div>
+		</div> <!-- end form -->
+	</div> <!-- end row -->
+</div> <!-- end container -->
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/login.js"></script>
+
+<!-- Vis register form - inline grundet EJS feautures -->
+<% if(showRegisterForm != null && showRegisterForm === true) { %>
+	<script>
+		$('.register-form').show(); $('.login-form, .social-buttons, .form-line').hide();
+	</script>
+<% } %>
+
+  </body>
+</html>

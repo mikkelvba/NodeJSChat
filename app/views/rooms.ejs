@@ -1,0 +1,49 @@
+<% include head.ejs %>
+<div class="container navigation">
+	<div class="controls">
+		<a href="/ses" class="logout-btn">Logout</a>
+	</div>
+</div>
+
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12 col-sm-10 col-sm-offset-1">
+			<div class="col-xs-12 col-sm-6">
+				<div class="room">
+					<div class="room-header clearfix">
+						<div class="room-about">
+							<div class="room-title">Rooms</div>
+							<div class="room-num-rooms"><%= rooms.length %> Rooms</div>
+						</div>
+					</div> <!-- end room-header -->
+
+					<div class="room-list">
+						<ul>
+							<% if(rooms.length > 0) { %>
+								<% rooms.forEach(function(room) { %>
+									<a href="/chat/<%= room.id %>"><li class="room-item"><%= room.title %></li></a>
+								<% }); %>
+							<% } else { %>
+								<!-- Else - Hvis der ingen rum er oprettet -->
+								<p class="message">No rooms yet - create one!</p>
+							<% } %>
+						</ul>
+					</div> <!-- end room-list -->
+				</div> <!-- end room -->
+			</div> <!-- end col-xs-6 -->
+			<div class="col-xs-12 col-sm-6">
+				<div class="room">
+					<div class="room-create clearfix">
+						<input type="text" name="title" autofocus placeholder ="Create a new room">
+						<button>Create</button>
+					</div> <!-- end room-create -->
+				</div>
+			</div>
+		</div>
+	</div> <!-- end row -->
+</div> <!-- end container -->
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/rooms.js"></script>
+  </body>
+</html>
